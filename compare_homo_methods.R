@@ -1,9 +1,9 @@
 rm(list = ls()); gc(reset = TRUE)
-your_path <- "/public/home/zhujin/bddistribution_great/sim_testing"
+your_path <- "~"
 setwd(your_path)
 library(energy)
-your_python_path <- "/public/home/zhujin/miniconda3/envs/mdf/bin/python"   # change to your path
 library(Ball)
+your_python_path <- "/public/home/zhujin/miniconda3/envs/mdf/bin/python"   # change to your python path
 
 homogeneity_simulator <- function(seed, case = "1-1", 
                                   methods = c("frechet", "ball", "energy"), 

@@ -1,5 +1,5 @@
 rm(list = ls()); gc(reset = TRUE)
-your_path <- "/public/home/zhujin/bddistribution_great/sim_testing"
+your_path <- "~"
 setwd(your_path)
 
 generate_spd_data <- function(value) {

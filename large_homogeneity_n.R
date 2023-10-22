@@ -1,5 +1,5 @@
 rm(list = ls()); gc(reset = TRUE)
-your_path <- "/public/home/zhujin/bddistribution_great/sim_testing"
+your_path <- "~"
 setwd(your_path)
 
 homogeneity_simulator <- function(seed, case = "1-1", num = 3000, p = 2) {

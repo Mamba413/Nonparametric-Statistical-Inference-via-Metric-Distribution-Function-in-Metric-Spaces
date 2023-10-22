@@ -1,5 +1,5 @@
 rm(list = ls()); gc(reset = TRUE)
-your_path <- "~/mdf/code/"
+your_path <- "~"
 setwd(your_path)
 
 measure.Choleksy.3d <- function(array3d){
