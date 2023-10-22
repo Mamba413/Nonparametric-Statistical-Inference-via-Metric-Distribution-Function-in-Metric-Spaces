@@ -3,7 +3,7 @@ rm(list = ls()); gc(reset = TRUE)
 ############################################
 ############# download dataset #############
 ############################################
-template <- "https://s3.amazonaws.com/your_path"
+template <- "https://s3.amazonaws.com/your_path"   ## change to you download path
 file_template <- "ADHD200-HO/%s.csv"
 
 
