@@ -41,4 +41,4 @@ The corresponding BibteX entries:
 
 
 ## Contact
-Please direct questions and comments to the [issues page](https://github.com/Mamba413/Nonparametric-Statistical-Inference-via-Metric-Distribution-Function-in-Metric-Spaces).
+Please direct questions and comments to the [issues page](https://github.com/Mamba413/Nonparametric-Statistical-Inference-via-Metric-Distribution-Function-in-Metric-Spaces/issues).
