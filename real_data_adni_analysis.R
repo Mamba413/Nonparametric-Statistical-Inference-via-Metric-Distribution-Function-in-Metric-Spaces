@@ -135,11 +135,6 @@ for (type in dx_type) {
                              num.permutations = 999, seed = 1234)[["p.value"]]
     dx_list <- list(as.vector(as.dist(dx_hippcampus)), 
                     as.vector(as.dist(dx_cov_name)))
-    ma_value_spectrum[i] <- KBCovLimit(dx_list, n = nrow(dx_hippcampus))[["p.value"]]
-    
-    ma_value2[i] <- KBCov_permuted(dx_list, n = nrow(dx_hippcampus), 
-                                   num.permutations = 999, 
-                                   seed = 1234)[["p.value"]]
     ma_value_spectrum2[i] <- KBCov(dx_list, n = nrow(dx_hippcampus))[["p.value"]]
     i <- i + 1
   }
@@ -147,13 +142,9 @@ for (type in dx_type) {
   print("Raw p-value: ")
   print(round(tm_value, 3))
   print(round(ma_value, 3))
-  print(round(ma_value_spectrum, 3))
-  print(round(ma_value2, 3))
   print(round(ma_value_spectrum2, 3))
   print("Adjusted p-value: ")
   print(round(p.adjust(tm_value), 3))
   print(round(p.adjust(ma_value), 3))
-  print(round(p.adjust(ma_value_spectrum), 3))
-  print(round(p.adjust(ma_value2), 3))
   print(round(p.adjust(ma_value_spectrum2), 3))
 }
