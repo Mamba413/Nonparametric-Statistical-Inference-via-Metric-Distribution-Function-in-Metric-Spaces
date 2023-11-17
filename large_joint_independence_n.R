@@ -80,7 +80,7 @@ joint_independence_simulator <- function(seed, case = "1-1", num = 3000) {
   dx3 <- list(as.matrix(x), as.matrix(y), as.matrix(z))
   
   permute_p <- bcov.test(dx3, distance=TRUE, num.permutations = 199)[["p.value"]]
-  limit_p <- KBCovLimit(dx, n=num)[["p.value"]]
+  limit_p <- KBCov(dx, n=num)[["p.value"]]
 
   c(permute_p, limit_p)
 }

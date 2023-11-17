@@ -195,12 +195,6 @@ joint_independence_simulator <- function(seed,
   dx2 <- list(x, y, z)
   permute_p <- permute_p2 <- limit_p <- ed_value <- 1.0
   
-  # limit_p <- KBCov(dx1, n=num)[["p.value"]]
-  # permute_p <- bcov.test(dx2, distance=TRUE)[["p.value"]]
-  
-  # dx11 <- list(as.vector(x), as.vector(y), as.vector(z))
-  # permute_p <- KBCov_permuted(dx11, n=num)[["p.value"]]
-  
   dx12 <- list(as.matrix(x), as.matrix(y), as.matrix(z))
   permute_p2 <- Ball::bcov.test(dx12, num.permutations = 299, 
                                 distance = TRUE)[["p.value"]]

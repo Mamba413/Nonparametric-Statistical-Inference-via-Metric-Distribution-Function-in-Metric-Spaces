@@ -119,20 +119,14 @@ bcov.test(demograph_all[["Handedness"]][-na_index], demograph_all[["Gender"]][-n
 set.seed(seed); dcov.test(demograph_all[["Handedness"]][-na_index], demograph_all[["Gender"]][-na_index], R = 999)
 dst_list2 <- list(as.vector(dist(demograph_all[["Handedness"]][-na_index])), 
                   as.vector(dist(demograph_all[["Gender"]][-na_index])))
-KBCovLimit(dst_list2, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
 KBCov(dst_list2, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
-KBCov_permuted(dst_list2, n = length(demograph_all[["Gender"]][-na_index]), 
-               num.permutations = 999, seed = seed)[["p.value"]]
 
 dxgh <- as.matrix(dist(demograph_all[-na_index, c("Gender", "Handedness")]))
 dxfc <- dx[-na_index, -na_index]
 bcov.test(dxgh, dxfc, num.permutations = 999, distance = TRUE)
 set.seed(seed); dcov.test(as.dist(dxgh), as.dist(dxfc), R = 999)
 dst_list3 <- list(dxgh[lower.tri(dxgh)], dxfc[lower.tri(dxfc)])
-KBCovLimit(dst_list3, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
 KBCov(dst_list3, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
-KBCov_permuted(dst_list3, n = length(demograph_all[["Gender"]][-na_index]), 
-               num.permutations = 999, seed = seed)[["p.value"]]
 
 dxh <- as.matrix(dist(demograph_all[-na_index, c("Handedness")]))
 dxfcg <- sqrt((dx[-na_index, -na_index])^2 + 
@@ -140,10 +134,7 @@ dxfcg <- sqrt((dx[-na_index, -na_index])^2 +
 bcov.test(dxh, dxfcg, num.permutations = 999, distance = TRUE)
 set.seed(seed); dcov.test(as.dist(dxh), as.dist(dxfcg), R = 999)
 dst_list4 <- list(dxh[lower.tri(dxh)], dxfcg[lower.tri(dxfcg)])
-KBCovLimit(dst_list4, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
 KBCov(dst_list4, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
-KBCov_permuted(dst_list4, n = length(demograph_all[["Gender"]][-na_index]), 
-               num.permutations = 999, seed = seed)[["p.value"]]
 
 dxg <- as.matrix(dist(demograph_all[-na_index, c("Gender")]))
 dxfch <- sqrt((dx[-na_index, -na_index])^2 + 
@@ -151,10 +142,7 @@ dxfch <- sqrt((dx[-na_index, -na_index])^2 +
 bcov.test(dxg, dxfch, num.permutations = 999, distance = TRUE)
 set.seed(seed); dcov.test(as.dist(dxg), as.dist(dxfch), R = 999)
 dst_list5 <- list(dxg[lower.tri(dxg)], dxfch[lower.tri(dxfch)])
-KBCovLimit(dst_list5, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
 KBCov(dst_list5, n = length(demograph_all[["Gender"]][-na_index]))[["p.value"]]
-KBCov_permuted(dst_list5, n = length(demograph_all[["Gender"]][-na_index]), 
-               num.permutations = 999, seed = seed)[["p.value"]]
 
 
 res1 <- cbind(c(0.057, 0.02, 0.727), 
